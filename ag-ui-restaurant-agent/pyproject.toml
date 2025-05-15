@@ -1,0 +1,36 @@
+[project]
+name = "restaurant_finder_agent"
+version = "0.1.0"
+description = "restaurant_finder_agent using crewAI"
+authors = [
+    { name = "Your Name", email = "you@example.com" },
+]
+requires-python = ">=3.12.4,<3.13"
+dependencies = [
+    "ag-ui-protocol>=0.1.4",
+    "crewai[tools]>=0.102.0",
+    "fastapi>=0.115.2",
+    "langchain-core>=0.2.30",
+    "openai>=1.65.3",
+    "uvicorn>=0.32.0",
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.0.0",
+    "asyncio>=3.4.3",
+]
+
+[project.scripts]
+restaurant_finder_agent = "restaurant_finder_agent.main:run"
+run_crew = "restaurant_finder_agent.main:run"
+train = "restaurant_finder_agent.main:train"
+replay = "restaurant_finder_agent.main:replay"
+test = "restaurant_finder_agent.main:test"
+start_api = "restaurant_finder_agent.main:start_api"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/restaurant_finder_agent"]
+
+[build-system]
+requires = [
+    "hatchling",
+]
+build-backend = "hatchling.build"
