@@ -47,10 +47,10 @@ To run the complete application:
 
    ```powershell
    cd ag-ui-restaurant-agent
-   pip install -e .
-   # Create .env file with your API keys
-   python -m restaurant_finder_agent.main start_api
+   poetry install
+   poetry run uvicorn src.restaurant_finder_agent.api:app
    ```
+   
 
 2. **Set Up the Frontend Application**:
 
@@ -77,7 +77,7 @@ To test the system quickly, you can run the example client:
 
 ```powershell
 cd ag-ui-restaurant-agent
-python example_client.py
+poetry run uvicorn src.restaurant_finder_agent.api:app
 ```
 
 ## Development
@@ -94,5 +94,4 @@ This project is intended as a demonstration of AI agent technology and CrewAI in
 ## Acknowledgments
 
 - [CrewAI](https://crewai.com) - Multi-agent orchestration framework
-- [AG-UI Protocol](https://github.com/microsoft/autogen/blob/main/website/docs/topics/agentchat/agent-ui-protocol.md) - Standardized agent-UI communication protocol
 - [CopilotKit](https://copilotkit.ai) - Frontend toolkit for AI agents
